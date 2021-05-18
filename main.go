@@ -26,14 +26,12 @@ import (
 	"rsc.io/quote"
 )
 
-// Foo is a method
-// func Foo() {
-
-// 	// err := "ERROR"
-// 	// fmt.Errorf("oh noes: %v", err)
-// }
-
 func main() {
+	var username = "max"
+	// TODO: Change this and the reference below to something different (ie, not "pawsword" or "password")
+	var pawsword = "im-a-cute-puppy"
+	fmt.Println("Something a puppy would use: ", username, pawsword)
+
 	handler := GetHTTPHandlers()
 	/* #nosec */
 	host := "0.0.0.0"
