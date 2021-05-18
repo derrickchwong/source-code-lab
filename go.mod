@@ -16,4 +16,11 @@ module google.com/hello-world
 
 go 1.15
 
-require rsc.io/quote v1.5.2
+require (
+	golang.org/x/sys v0.0.0-20210514084401-e8d321eab015 // indirect
+	golang.org/x/text v0.3.3 // indirect
+	golang.org/x/tools v0.1.1 // indirect
+	honnef.co/go/tools v0.1.4 // indirect
+	rsc.io/quote v1.5.2
+	rsc.io/sampler v1.3.0 // indirect
+)

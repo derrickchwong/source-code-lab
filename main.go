@@ -26,10 +26,18 @@ import (
 	"rsc.io/quote"
 )
 
+// Foo is a method
+// func Foo() {
+
+// 	// err := "ERROR"
+// 	// fmt.Errorf("oh noes: %v", err)
+// }
+
 func main() {
 	handler := GetHTTPHandlers()
 	/* #nosec */
-	http.ListenAndServe(fmt.Sprintf("0.0.0.0:8080"), &handler)
+	host := "0.0.0.0"
+	http.ListenAndServe(fmt.Sprintf("%s:8080", host), &handler)
 }
 
 // GetHTTPHandlers sets up and runs the main http server
@@ -50,13 +58,14 @@ func SayHelloHandler(w http.ResponseWriter, r *http.Request) {
 
 	output.WriteString(fmt.Sprintf("<html><head><title>HI ALL hello there! - %s</title></head><body>", currentEnvironment))
 
-	output.WriteString("<h1>Hi AppTeam!</h1>")                                     // ##_CHANGE ME_##
+	output.WriteString("<h1>Hi AppTeam!</h1>") // ##_CHANGE ME_##
 
 	output.WriteString(fmt.Sprintf("<h2>Random Quote: %s</h2>", quote.Glass())) // Opt()
 	output.WriteString(fmt.Sprintf("<h2>Current Environment: %s</h2>", currentEnvironment))
 	output.WriteString("</body><html>")
 
 	// write output to stream
+	//lint:ignore SA1006 Example of ingoring one specific line
 	fmt.Fprintf(w, output.String())
 }
 
