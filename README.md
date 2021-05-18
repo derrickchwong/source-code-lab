@@ -8,6 +8,25 @@ The below requirements are for running the lab. If using the "Cloud Shell", all 
 
 * Golang 1.15+
 
+## Activities
+
+1. Linting - Linting is used to check common style-based mistakes or defects related to syntax. Linting assists security by
+providing a common syntax pattern across multiple teams that leads to faster code reviews, knowlede sharing and clarity of code.
+Additionally, Linting identifies common syntax mistakes that can lead to common vulnerabilities such as improper or less efficient
+use of libraries or core APIs.
+
+1. AST/Static security testing -
+
+
+
+
+### AST Tool (`gosec`)
+
+```bash
+export GOSEC_VERSION="2.7.0"
+curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v${GOSEC_VERSION}
+```
+
 ## Go Lint (advanced lint)
 
 Linting identifies common syntax mistakes and bad practices.

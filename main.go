@@ -37,7 +37,10 @@ func main() {
 	handler := GetHTTPHandlers()
 	/* #nosec */
 	host := "0.0.0.0"
-	http.ListenAndServe(fmt.Sprintf("%s:8080", host), &handler)
+	err := http.ListenAndServe(fmt.Sprintf("%s:8080", host), &handler)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 // GetHTTPHandlers sets up and runs the main http server
