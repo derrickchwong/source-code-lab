@@ -28,14 +28,20 @@ import (
 
 func main() {
 	var username = "max"
-	// TODO: Change this and the reference below to something different (ie, not "pawsword" or "password")
+	// AST - Step 1: Change the name of this variable and the reference below to something different (ie, not "pawsword" or "password")
 	var pawsword = "im-a-cute-puppy"
 	fmt.Println("Something a puppy would use: ", username, pawsword)
 
 	handler := GetHTTPHandlers()
-	/* #nosec */
-	host := "0.0.0.0"
-	err := http.ListenAndServe(fmt.Sprintf("%s:8080", host), &handler)
+
+	// LINTING - Step 2: Un-comment these two fixing the linting error
+	// host := "0.0.0.0"
+	// err := http.ListenAndServe(fmt.Sprintf("%s:8080", host), &handler)
+
+	// LINTTING - Step 1: COMMENT this line out
+	err := http.ListenAndServe(fmt.Sprintf("0.0.0.0:8080"), &handler)
+
+	// LINTING - Do not change anyting below this
 	if err != nil {
 		log.Fatal(err)
 	}

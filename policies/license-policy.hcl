@@ -14,8 +14,9 @@
 
 # List of SPDX License IDs: https://spdx.org/licenses/
 
-# License SPDX IDs MUST be explicitly listed to pass
-allow = ["BSD-3-Clause", "MIT", "Apache-2.0", "MPL-2.0-no-copyleft-exception"]
+# LICENSE - Step 2 - add "BSD-3-Clause" to the allow list (either uncomment and comment out line #19, or add "BSD-3-Clause" to the end of this list)
+# allow = ["MIT", "Apache-2.0", "MPL-2.0-no-copyleft-exception", "BSD-3-Clause"]
+allow = ["MIT", "Apache-2.0", "MPL-2.0-no-copyleft-exception"]
 
-# Explicitly deny these licenses
-deny  = ["MPL-2.0", "GNU General Public License v2.0"]
+# LICENSE - Step 1 - Move "BSD-3-Clause" to "allowed"
+deny  = ["BSD-3-Clause", "MPL-2.0", "GNU General Public License v2.0"]
