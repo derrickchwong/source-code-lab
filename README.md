@@ -60,7 +60,7 @@ use of libraries or core APIs.
 
     ```bash
     export GOSEC_VERSION="2.7.0"
-    curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v${GOSEC_VERSION}
+    curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s -- -b $HOME/gopath/bin v${GOSEC_VERSION}
     ```
 
 1. Run `gosec` with policy file against the source code
@@ -111,7 +111,7 @@ wget -O /tmp/golicense/golicense.tar.gz https://github.com/mitchellh/golicense/r
 pushd /tmp/golicense
 tar -xzf golicense.tar.gz
 chmod +x golicense
-mv golicense $(go env GOPATH)/bin/golicense
+mv golicense $HOME/gopath/bin/golicense
 popd
 ```
 
